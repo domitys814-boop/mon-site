@@ -3,815 +3,1107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olga Business — Cheveux & Extensions Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>SALA RH Consulting — Votre partenaire de confiance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rose: #e8a0b0;
-            --rose-fonce: #c96f87;
-            --or: #c9a84c;
-            --or-clair: #f0d080;
-            --or-pale: #f9f0d8;
-            --noir: #1a1014;
-            --blanc: #fdfaf7;
-            --gris: #6b5b63;
+            --bordeaux: #7a1a2e;
+            --bordeaux-fonce: #4a0e1a;
+            --bordeaux-clair: #9b2a3e;
+            --or: #c49a6c;
+            --or-clair: #e8c9a0;
+            --creme: #fdf6f0;
+            --creme-fonce: #f5e8dc;
+            --blanc: #ffffff;
+            --noir: #1a1010;
+            --gris: #7a6a6a;
+            --gris-clair: #f8f4f2;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Jost', sans-serif;
-            background-color: var(--blanc);
+            background: var(--blanc);
             color: var(--noir);
-            overflow-x: hidden;
         }
 
-        /* BARRE ANNONCE */
-        .annonce {
-            background: linear-gradient(90deg, var(--noir), #3a1a24, var(--noir));
+        /* TOP BAR */
+        .top-bar {
+            background: var(--bordeaux-fonce);
             color: var(--or-clair);
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* NAVIGATION */
-        nav {
+            padding: 9px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 60px;
-            background: var(--blanc);
-            border-bottom: 1px solid #f0e0e8;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .top-bar a {
+            color: var(--or-clair);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .top-bar a:hover { color: white; }
+
+        .top-bar-gauche { display: flex; gap: 30px; align-items: center; }
+        .top-bar-droite { display: flex; gap: 20px; align-items: center; }
+
+        /* NAV */
+        nav {
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 999;
+            background: var(--blanc);
+            border-bottom: 1px solid #ede0d8;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            box-shadow: 0 2px 20px rgba(122,26,46,0.06);
         }
 
-        .logo {
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-nav img {
+            height: 55px;
+            width: 55px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-texte {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-nom {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
-            color: var(--noir);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--bordeaux);
             letter-spacing: 3px;
             text-transform: uppercase;
+            line-height: 1;
         }
 
-        .logo span {
-            color: var(--or);
-        }
-
-        .nav-liens {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-liens a {
-            text-decoration: none;
-            color: var(--gris);
-            font-size: 13px;
-            letter-spacing: 2px;
+        .logo-sous {
+            font-size: 10px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            transition: color 0.3s;
+            color: var(--or);
+            margin-top: 3px;
         }
 
-        .nav-liens a:hover { color: var(--rose-fonce); }
-
-        .nav-contact {
+        .nav-menu {
             display: flex;
-            gap: 15px;
-            align-items: center;
+            list-style: none;
+            gap: 35px;
         }
 
-        .btn-whatsapp {
-            background: var(--noir);
-            color: var(--or-clair);
-            padding: 10px 22px;
-            border-radius: 2px;
+        .nav-menu a {
             text-decoration: none;
             font-size: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
+            color: var(--noir);
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bordeaux);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover { color: var(--bordeaux); }
+        .nav-menu a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--bordeaux);
+            color: var(--blanc);
+            padding: 12px 28px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
             transition: background 0.3s;
         }
 
-        .btn-whatsapp:hover { background: var(--rose-fonce); }
+        .nav-cta:hover { background: var(--bordeaux-clair); }
 
         /* HERO */
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            overflow: hidden;
+            background: var(--creme);
         }
 
-        .hero-texte {
+        .hero-gauche {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 80px 60px;
-            background: var(--blanc);
+            padding: 80px 70px 80px 80px;
         }
 
         .hero-badge {
-            display: inline-block;
-            background: var(--or-pale);
-            color: var(--or);
-            padding: 6px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--creme-fonce);
+            color: var(--bordeaux);
+            padding: 8px 18px;
             font-size: 11px;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
-            border-left: 3px solid var(--or);
+            border-left: 3px solid var(--bordeaux);
+            width: fit-content;
         }
 
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 64px;
-            font-weight: 300;
+            font-size: 60px;
+            font-weight: 400;
             line-height: 1.1;
-            color: var(--noir);
-            margin-bottom: 25px;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 20px;
         }
 
         .hero h1 em {
             font-style: italic;
-            color: var(--rose-fonce);
+            color: var(--or);
         }
 
-        .hero p {
+        .hero-slogan {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--or);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-desc {
+            font-size: 15px;
             color: var(--gris);
-            font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.9;
             margin-bottom: 40px;
-            max-width: 420px;
+            max-width: 440px;
         }
 
-        .hero-boutons {
+        .hero-cta {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
+            margin-bottom: 50px;
         }
 
-        .btn-principal {
-            background: var(--noir);
-            color: var(--or-clair);
-            padding: 16px 35px;
+        .cta-bordeaux {
+            background: var(--bordeaux);
+            color: var(--blanc);
+            padding: 16px 38px;
             text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .cta-bordeaux:hover { background: var(--bordeaux-clair); }
+
+        .cta-outline {
+            border: 1px solid var(--bordeaux);
+            color: var(--bordeaux);
+            padding: 16px 38px;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             transition: all 0.3s;
-            border: 2px solid var(--noir);
         }
 
-        .btn-principal:hover {
-            background: transparent;
-            color: var(--noir);
+        .cta-outline:hover { background: var(--bordeaux); color: var(--blanc); }
+
+        .hero-valeurs {
+            display: flex;
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e0d0c8;
         }
 
-        .btn-secondaire {
-            background: transparent;
-            color: var(--rose-fonce);
-            padding: 16px 35px;
-            text-decoration: none;
+        .valeur {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            color: var(--gris);
             text-transform: uppercase;
-            border: 2px solid var(--rose);
-            transition: all 0.3s;
         }
 
-        .btn-secondaire:hover {
-            background: var(--rose-fonce);
-            color: white;
-            border-color: var(--rose-fonce);
+        .valeur-icone {
+            width: 28px;
+            height: 28px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
         }
 
-        .hero-image {
+        .hero-droite {
             position: relative;
             overflow: hidden;
         }
 
-        .hero-image img {
+        .hero-droite img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
-        .hero-image-overlay {
+        .hero-droite-overlay {
             position: absolute;
             bottom: 40px;
             left: 40px;
-            background: rgba(26, 16, 20, 0.85);
-            color: var(--or-clair);
-            padding: 20px 25px;
-            backdrop-filter: blur(5px);
+            right: 40px;
+            background: rgba(74, 14, 26, 0.88);
+            padding: 25px 28px;
+            backdrop-filter: blur(8px);
         }
 
-        .hero-image-overlay p {
+        .hero-droite-overlay p {
             font-size: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--or-clair);
+            margin-bottom: 5px;
         }
 
-        .hero-image-overlay strong {
+        .hero-droite-overlay strong {
             font-family: 'Cormorant Garamond', serif;
             font-size: 22px;
             font-weight: 300;
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* STATS */
-        .stats {
-            background: var(--noir);
-            padding: 40px 60px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .stat {
-            text-align: center;
             color: white;
+            display: block;
         }
 
-        .stat-nombre {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            color: var(--or-clair);
-            font-weight: 300;
+        /* BANDE */
+        .bande {
+            background: var(--bordeaux);
+            padding: 16px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
         }
 
-        .stat-label {
+        .bande-item {
             font-size: 11px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--rose);
-            margin-top: 5px;
+            color: var(--or-clair);
+            white-space: nowrap;
         }
 
-        .stat-separateur {
-            width: 1px;
-            height: 50px;
-            background: #3a2a30;
-        }
-
-        /* CATEGORIES */
-        .categories {
-            padding: 100px 60px;
+        /* SERVICES */
+        .services {
+            padding: 100px 80px;
             background: var(--blanc);
         }
 
-        .section-titre {
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .section-titre h2 {
+        .section-header h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 46px;
-            font-weight: 300;
-            color: var(--noir);
-            margin-bottom: 15px;
-        }
-
-        .section-titre p {
-            color: var(--gris);
-            font-size: 15px;
-            letter-spacing: 1px;
-        }
-
-        .section-titre .ligne-or {
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--rose), var(--or));
-            margin: 20px auto 0;
-        }
-
-        .grille-categories {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .categorie-carte {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 2px;
-        }
-
-        .categorie-carte img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .categorie-carte:hover img { transform: scale(1.05); }
-
-        .categorie-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(26,16,20,0.9));
-            padding: 30px 20px 20px;
-            color: white;
-        }
-
-        .categorie-overlay h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
-
-        .categorie-overlay p {
-            font-size: 12px;
-            letter-spacing: 1px;
-            color: var(--or-clair);
-        }
-
-        /* PRODUITS */
-        .produits {
-            padding: 100px 60px;
-            background: #faf6f8;
-        }
-
-        .grille-produits {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .produit-carte {
-            background: white;
-            border-radius: 2px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .produit-carte:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(201,111,135,0.15);
-        }
-
-        .produit-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .produit-image img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .produit-carte:hover .produit-image img { transform: scale(1.05); }
-
-        .produit-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--rose-fonce);
-            color: white;
-            padding: 4px 12px;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .produit-info {
-            padding: 20px;
-        }
-
-        .produit-info h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 44px;
             font-weight: 400;
-            margin-bottom: 8px;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 12px;
         }
 
-        .produit-info p {
-            color: var(--gris);
+        .section-header p {
             font-size: 13px;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .produit-bas {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .produit-prix {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            color: var(--or);
-            font-weight: 600;
-        }
-
-        .btn-commander {
-            background: var(--noir);
-            color: var(--or-clair);
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 11px;
+            color: var(--gris);
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: background 0.3s;
-            border: none;
+        }
+
+        .separateur {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--bordeaux), var(--or));
+            margin: 18px auto 0;
+        }
+
+        .services-grille {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .service-carte {
+            background: var(--gris-clair);
+            padding: 40px 28px;
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
             cursor: pointer;
         }
 
-        .btn-commander:hover { background: var(--rose-fonce); }
-
-        /* PAIEMENT */
-        .paiement {
-            background: var(--or-pale);
-            padding: 60px;
-            text-align: center;
-            border-top: 1px solid #e8d8a0;
-            border-bottom: 1px solid #e8d8a0;
+        .service-carte:hover {
+            background: var(--blanc);
+            border-bottom-color: var(--bordeaux);
+            box-shadow: 0 10px 40px rgba(122,26,46,0.1);
+            transform: translateY(-5px);
         }
 
-        .paiement h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: var(--noir);
-        }
-
-        .paiement p {
-            color: var(--gris);
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .paiement-icones {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .paiement-icone {
-            background: white;
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            color: var(--noir);
-            border: 1px solid #e0d0a0;
+        .service-icone {
+            width: 70px;
+            height: 70px;
+            background: var(--bordeaux);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 22px;
+            transition: background 0.3s;
         }
 
-        /* TEMOIGNAGES */
-        .temoignages {
-            padding: 100px 60px;
-            background: var(--blanc);
+        .service-carte:hover .service-icone { background: var(--or); }
+
+        .service-carte h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 12px;
         }
 
-        .grille-temoignages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .temoignage-carte {
-            padding: 30px;
-            background: white;
-            border-left: 3px solid var(--rose);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .etoiles {
-            color: var(--or);
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .temoignage-carte p {
-            color: var(--gris);
-            font-size: 14px;
-            line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .temoignage-auteur {
-            font-weight: 500;
+        .service-carte p {
             font-size: 13px;
-            color: var(--noir);
-            letter-spacing: 1px;
+            color: var(--gris);
+            line-height: 1.8;
         }
 
-        /* CONTACT */
-        .contact {
-            background: var(--noir);
-            padding: 100px 60px;
+        /* APROPOS */
+        .apropos {
+            padding: 100px 80px;
+            background: var(--creme);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
 
-        .contact-texte h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 46px;
-            font-weight: 300;
+        .apropos-image {
+            position: relative;
+        }
+
+        .apropos-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .apropos-image-badge {
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            background: var(--bordeaux);
             color: white;
+            padding: 30px;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apropos-image-badge strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            display: block;
+            line-height: 1;
+        }
+
+        .apropos-image-badge span {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-top: 5px;
+        }
+
+        .apropos-texte h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
-        .contact-texte h2 em {
-            color: var(--or-clair);
+        .apropos-texte h2 em {
             font-style: italic;
+            color: var(--or);
         }
 
-        .contact-texte p {
-            color: #a09098;
+        .apropos-texte p {
             font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 35px;
+            color: var(--gris);
+            line-height: 1.9;
+            margin-bottom: 20px;
         }
 
-        .contact-boutons {
+        .apropos-liste {
+            list-style: none;
+            margin: 25px 0 35px;
+        }
+
+        .apropos-liste li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e8d8d0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--noir);
+        }
+
+        .apropos-liste li::before {
+            content: '✓';
+            width: 22px;
+            height: 22px;
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+
+        /* PROCESSUS */
+        .processus {
+            padding: 100px 80px;
+            background: var(--bordeaux-fonce);
+        }
+
+        .processus .section-header h2 { color: white; }
+        .processus .section-header p { color: var(--or-clair); }
+        .processus .separateur { background: linear-gradient(90deg, var(--or), var(--or-clair)); }
+
+        .processus-grille {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .processus-grille::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--or), transparent);
+            z-index: 0;
+        }
+
+        .etape {
+            text-align: center;
+            padding: 20px 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .etape-numero {
+            width: 90px;
+            height: 90px;
+            background: var(--bordeaux-clair);
+            border: 2px solid var(--or);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: background 0.3s;
+        }
+
+        .etape:hover .etape-numero { background: var(--or); }
+
+        .etape-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--or-clair);
+            line-height: 1;
+        }
+
+        .etape-icone { font-size: 20px; }
+
+        .etape h3 {
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .etape p {
+            font-size: 12px;
+            color: #c0a0a8;
+            line-height: 1.7;
+        }
+
+        /* STATS */
+        .stats {
+            background: var(--creme-fonce);
+            padding: 70px 80px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px 20px;
+            border-right: 1px solid #e0c8b8;
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat-nombre {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: var(--bordeaux);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-top: 10px;
+        }
+
+        /* TEMOIGNAGES */
+        .temoignages {
+            padding: 100px 80px;
+            background: var(--blanc);
+        }
+
+        .temo-grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .temo-carte {
+            background: var(--gris-clair);
+            padding: 35px 30px;
+            border-top: 3px solid var(--bordeaux);
+            transition: transform 0.3s;
+        }
+
+        .temo-carte:hover { transform: translateY(-5px); }
+
+        .temo-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            color: var(--bordeaux);
+            line-height: 0.5;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .temo-texte {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.85;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .temo-auteur {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .temo-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .temo-nom {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--bordeaux-fonce);
+        }
+
+        .temo-poste {
+            font-size: 11px;
+            color: var(--gris);
+            margin-top: 2px;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 100px 80px;
+            background: var(--creme);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-infos h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .contact-infos h2 em { font-style: italic; color: var(--or); }
+
+        .contact-infos p {
+            font-size: 15px;
+            color: var(--gris);
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+
+        .contact-moyens {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        .btn-contact {
+        .contact-moyen {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 18px 25px;
+            gap: 16px;
+            padding: 18px 22px;
+            background: var(--blanc);
+            border-left: 3px solid var(--bordeaux);
             text-decoration: none;
-            border-radius: 2px;
-            font-size: 14px;
-            letter-spacing: 1px;
             transition: all 0.3s;
         }
 
-        .btn-wa {
-            background: #25D366;
-            color: white;
+        .contact-moyen:hover {
+            background: var(--bordeaux);
+            border-left-color: var(--or);
         }
 
-        .btn-wa:hover { background: #1da851; }
+        .contact-moyen:hover .contact-moyen-texte,
+        .contact-moyen:hover .contact-moyen-label { color: white; }
 
-        .btn-pp {
-            background: #003087;
-            color: white;
+        .contact-moyen-icone {
+            width: 42px;
+            height: 42px;
+            background: var(--creme-fonce);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
-        .btn-pp:hover { background: #001f5a; }
+        .contact-moyen:hover .contact-moyen-icone { background: rgba(255,255,255,0.2); }
 
-        .btn-tt {
-            background: #ff0050;
-            color: white;
+        .contact-moyen-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-bottom: 3px;
+            transition: color 0.3s;
         }
 
-        .btn-tt:hover { background: #cc0040; }
-
-        .btn-contact-icone {
-            font-size: 20px;
+        .contact-moyen-texte {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--noir);
+            transition: color 0.3s;
         }
 
+        /* FORMULAIRE */
         .contact-form {
-            background: #2a1a20;
-            padding: 40px;
-            border-radius: 2px;
+            background: var(--blanc);
+            padding: 45px;
+            box-shadow: 0 5px 30px rgba(122,26,46,0.08);
         }
 
         .contact-form h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            color: var(--or-clair);
-            font-weight: 300;
-            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 28px;
         }
 
-        .form-groupe {
-            margin-bottom: 20px;
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-        .form-groupe label {
+        .fg { margin-bottom: 18px; }
+
+        .fg label {
             display: block;
-            color: #a09098;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            color: var(--gris);
+            margin-bottom: 7px;
         }
 
-        .form-groupe input,
-        .form-groupe textarea,
-        .form-groupe select {
+        .fg input, .fg select, .fg textarea {
             width: 100%;
-            padding: 12px 15px;
-            background: #1a1014;
-            border: 1px solid #3a2a30;
-            color: white;
+            padding: 13px 15px;
+            background: var(--gris-clair);
+            border: 1px solid #e8d8d0;
             font-family: 'Jost', sans-serif;
             font-size: 14px;
-            border-radius: 2px;
-            transition: border 0.3s;
+            color: var(--noir);
+            transition: border 0.2s;
         }
 
-        .form-groupe input:focus,
-        .form-groupe textarea:focus,
-        .form-groupe select:focus {
+        .fg input:focus, .fg select:focus, .fg textarea:focus {
             outline: none;
-            border-color: var(--or);
+            border-color: var(--bordeaux);
+            background: var(--blanc);
         }
 
-        .form-groupe textarea { height: 100px; resize: vertical; }
-
-        .form-groupe select option { background: #1a1014; }
+        .fg textarea { height: 100px; resize: vertical; }
 
         .btn-envoyer {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(90deg, var(--rose-fonce), var(--or));
-            color: white;
+            padding: 16px;
+            background: var(--bordeaux);
+            color: var(--blanc);
             border: none;
             font-family: 'Jost', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 3px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: opacity 0.3s;
+            transition: background 0.3s;
+            margin-top: 5px;
         }
 
-        .btn-envoyer:hover { opacity: 0.9; }
+        .btn-envoyer:hover { background: var(--bordeaux-clair); }
 
         /* FOOTER */
         footer {
-            background: #0d080b;
-            padding: 50px 60px 30px;
+            background: var(--bordeaux-fonce);
+            padding: 70px 80px 30px;
         }
 
-        .footer-haut {
+        .footer-grille {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
             padding-bottom: 40px;
-            border-bottom: 1px solid #2a1a20;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .footer-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            color: white;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
+        .footer-logo-texte { color: white; font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; }
+        .footer-logo-sous { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--or-clair); margin-bottom: 18px; }
 
-        .footer-logo span { color: var(--or); }
-
-        .footer-desc {
-            color: #6b5b63;
-            font-size: 14px;
+        .footer-brand p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .footer-reseaux {
-            display: flex;
-            gap: 12px;
-        }
+        .footer-social { display: flex; gap: 10px; }
 
-        .footer-reseau {
+        .footer-social a {
             width: 36px;
             height: 36px;
-            background: #2a1a20;
+            background: rgba(255,255,255,0.08);
+            color: var(--or-clair);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
             text-decoration: none;
-            color: var(--or-clair);
-            font-size: 14px;
+            transition: background 0.2s;
             border-radius: 2px;
-            transition: background 0.3s;
         }
 
-        .footer-reseau:hover { background: var(--rose-fonce); }
+        .footer-social a:hover { background: var(--bordeaux-clair); }
 
         .footer-col h4 {
-            color: var(--or-clair);
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 11px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            color: var(--or-clair);
+            margin-bottom: 22px;
         }
 
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
 
         .footer-col ul li a {
-            color: #6b5b63;
+            color: rgba(255,255,255,0.45);
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
+            font-size: 13px;
+            transition: color 0.2s;
         }
 
-        .footer-col ul li a:hover { color: var(--rose); }
+        .footer-col ul li a:hover { color: var(--or-clair); }
 
         .footer-bas {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .footer-bas p {
-            color: #4a3a40;
             font-size: 12px;
-            letter-spacing: 1px;
+            color: rgba(255,255,255,0.3);
         }
 
         .footer-bas span { color: var(--or); }
 
-        /* RESPONSIVE */
+        /* MOBILE */
         @media (max-width: 900px) {
-            nav { padding: 15px 20px; }
-            .nav-liens { display: none; }
-            .hero { grid-template-columns: 1fr; }
-            .hero-image { height: 300px; }
-            .hero-texte { padding: 50px 20px; }
-            .hero h1 { font-size: 40px; }
-            .stats { padding: 30px 20px; flex-wrap: wrap; gap: 20px; }
-            .categories, .produits, .temoignages { padding: 60px 20px; }
-            .grille-categories { grid-template-columns: repeat(2, 1fr); }
-            .grille-produits { grid-template-columns: 1fr; }
-            .grille-temoignages { grid-template-columns: 1fr; }
-            .contact { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
-            .footer-haut { grid-template-columns: 1fr; gap: 30px; }
-            .footer-bas { flex-direction: column; gap: 10px; text-align: center; }
-            .paiement { padding: 40px 20px; }
+            .top-bar { padding: 9px 20px; font-size: 11px; }
+            nav { padding: 0 20px; }
+            .nav-menu { display: none; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-gauche { padding: 50px 25px; }
+            .hero h1 { font-size: 38px; }
+            .hero-droite { height: 400px; }
+            .services, .apropos, .processus, .temoignages, .contact { padding: 60px 20px; }
+            .services-grille { grid-template-columns: 1fr 1fr; }
+            .apropos { grid-template-columns: 1fr; }
+            .apropos-image-badge { right: 10px; bottom: -20px; }
+            .processus-grille { grid-template-columns: 1fr 1fr; }
+            .stats { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
+            .temo-grille { grid-template-columns: 1fr; }
+            .contact { grid-template-columns: 1fr; }
+            .footer-grille { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .footer-bas { flex-direction: column; gap: 8px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ANNONCE -->
-    <div class="annonce">
-        ✨ Livraison offerte dès 80€ d'achat en France métropolitaine ✨
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-gauche">
+            <a href="tel:0780809353">📞 07 80 80 93 53</a>
+            <a href="mailto:rh@sala-consulting.fr">✉ rh@sala-consulting.fr</a>
+        </div>
+        <div class="top-bar-droite">
+            <span>Paris / Île-de-France</span>
+            <a href="https://wa.me/33780809353" target="_blank">💬 WhatsApp</a>
+        </div>
     </div>
 
-    <!-- NAVIGATION -->
+    <!-- NAV -->
     <nav>
-        <div class="logo">Olga <span>Business</span></div>
-        <ul class="nav-liens">
-            <li><a href="#categories">Collections</a></li>
-            <li><a href="#produits">Produits</a></li>
-            <li><a href="#temoignages">Avis</a></li>
+        <a href="#" class="logo-nav">
+            <img src="unnamed.jpg" alt="SALA RH Consulting Logo">
+            <div class="logo-texte">
+                <span class="logo-nom">SALA</span>
+                <span class="logo-sous">RH Consulting</span>
+            </div>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#processus">Notre méthode</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-contact">
-            <a href="https://wa.me/33763140181" target="_blank" class="btn-whatsapp">Commander →</a>
-        </div>
+        <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-texte">
-            <div class="hero-badge">✦ Collection Premium 2026</div>
-            <h1>La beauté<br>commence par<br><em>vos cheveux</em></h1>
-            <p>Découvrez notre sélection de mèches, tissages, perruques et extensions de qualité supérieure. Des cheveux qui subliment votre beauté naturelle.</p>
-            <div class="hero-boutons">
-                <a href="#produits" class="btn-principal">Voir la boutique</a>
-                <a href="https://wa.me/33763140181" target="_blank" class="btn-secondaire">WhatsApp →</a>
+        <div class="hero-gauche">
+            <div class="hero-badge">✦ Votre partenaire de confiance</div>
+            <h1>Expertise RH<br>& <em>Recrutement</em><br>sur mesure</h1>
+            <p class="hero-slogan">"Votre partenaire de confiance"</p>
+            <p class="hero-desc">Accompagnement administratif, recrutement d'agents qualifiés et conseil en droit du travail. Nous plaçons les bons profils dans les bonnes entreprises en Île-de-France.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="cta-bordeaux">Prendre rendez-vous</a>
+                <a href="#services" class="cta-outline">Nos services</a>
+            </div>
+            <div class="hero-valeurs">
+                <div class="valeur"><div class="valeur-icone">🛡</div>Professionnalisme</div>
+                <div class="valeur"><div class="valeur-icone">♡</div>Écoute</div>
+                <div class="valeur"><div class="valeur-icone">🎯</div>Résultats</div>
+                <div class="valeur"><div class="valeur-icone">🔒</div>Confidentialité</div>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Olga Business cheveux premium">
-            <div class="hero-image-overlay">
-                <p>Qualité garantie</p>
-                <strong>100% Cheveux Naturels</strong>
+        <div class="hero-droite">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=85" alt="SALA RH Consulting">
+            <div class="hero-droite-overlay">
+                <p>Cabinet spécialisé</p>
+                <strong>Recrutement & Conseil RH — Paris</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANDE -->
+    <div class="bande">
+        <span class="bande-item">✦ Accompagnement administratif</span>
+        <span class="bande-item">✦ Emploi & insertion professionnelle</span>
+        <span class="bande-item">✦ Services RH</span>
+        <span class="bande-item">✦ Conseil en droit du travail</span>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Nos Services</h2>
+            <p>Un accompagnement complet pour votre réussite</p>
+            <div class="separateur"></div>
+        </div>
+        <div class="services-grille">
+            <div class="service-carte">
+                <div class="service-icone">📋</div>
+                <h3>Accompagnement Administratif</h3>
+                <p>Gestion de vos dossiers administratifs, suivi des procédures et mise en conformité. Nous vous accompagnons à chaque étape.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">💼</div>
+                <h3>Emploi & Insertion Professionnelle</h3>
+                <p>Placement d'agents qualifiés en entreprise, accompagnement à l'insertion et suivi personnalisé des candidats.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">👥</div>
+                <h3>Services RH</h3>
+                <p>Gestion des ressources humaines, recrutement sur mesure, formation et développement des compétences de vos équipes.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">⚖️</div>
+                <h3>Conseil en Droit du Travail</h3>
+                <p>Expertise juridique en droit social, rédaction de contrats, gestion des conflits et mise en conformité légale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="apropos" id="apropos">
+        <div class="apropos-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85" alt="SALA RH Consulting équipe">
+            <div class="apropos-image-badge">
+                <strong>100%</strong>
+                <span>Dédié à votre succès</span>
+            </div>
+        </div>
+        <div class="apropos-texte">
+            <h2>Un cabinet RH<br>à votre <em>service</em></h2>
+            <p>SALA RH Consulting est un cabinet spécialisé en ressources humaines et accompagnement administratif, basé à Paris en Île-de-France.</p>
+            <p>Notre mission est de créer des ponts entre les entreprises et les talents, tout en garantissant un accompagnement humain, professionnel et confidentiel à chacun de nos clients.</p>
+            <ul class="apropos-liste">
+                <li>Recrutement d'agents qualifiés pour les entreprises</li>
+                <li>Accompagnement personnalisé des candidats</li>
+                <li>Conseil juridique en droit du travail</li>
+                <li>Gestion administrative complète</li>
+                <li>Suivi post-placement et fidélisation</li>
+            </ul>
+            <a href="#contact" class="cta-bordeaux">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- PROCESSUS -->
+    <section class="processus" id="processus">
+        <div class="section-header">
+            <h2>Notre Méthode</h2>
+            <p>Un processus structuré pour des résultats concrets</p>
+            <div class="separateur"></div>
+        </div>
+        <div class="processus-grille">
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">01</div>
+                    <div class="etape-icone">📞</div>
+                </div>
+                <h3>Premier contact</h3>
+                <p>Échange initial pour comprendre vos besoins et objectifs spécifiques.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">02</div>
+                    <div class="etape-icone">🔍</div>
+                </div>
+                <h3>Analyse & audit</h3>
+                <p>Étude approfondie de votre situation et de vos besoins en recrutement.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">03</div>
+                    <div class="etape-icone">🎯</div>
+                </div>
+                <h3>Sélection</h3>
+                <p>Identification et sélection rigoureuse des meilleurs profils pour votre entreprise.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">04</div>
+                    <div class="etape-icone">🤝</div>
+                </div>
+                <h3>Placement</h3>
+                <p>Mise en relation et intégration des candidats au sein de votre équipe.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">05</div>
+                    <div class="etape-icone">📈</div>
+                </div>
+                <h3>Suivi</h3>
+                <p>Accompagnement continu et suivi post-placement pour garantir la réussite.</p>
             </div>
         </div>
     </section>
@@ -819,315 +1111,198 @@
     <!-- STATS -->
     <div class="stats">
         <div class="stat">
-            <div class="stat-nombre">500+</div>
-            <div class="stat-label">Clientes satisfaites</div>
+            <div class="stat-nombre">200+</div>
+            <div class="stat-label">Placements réussis</div>
         </div>
-        <div class="stat-separateur"></div>
         <div class="stat">
             <div class="stat-nombre">50+</div>
-            <div class="stat-label">Références disponibles</div>
+            <div class="stat-label">Entreprises partenaires</div>
         </div>
-        <div class="stat-separateur"></div>
         <div class="stat">
-            <div class="stat-nombre">4.9★</div>
-            <div class="stat-label">Note moyenne</div>
+            <div class="stat-nombre">98%</div>
+            <div class="stat-label">Taux de satisfaction</div>
         </div>
-        <div class="stat-separateur"></div>
         <div class="stat">
-            <div class="stat-nombre">48h</div>
-            <div class="stat-label">Délai de livraison</div>
-        </div>
-    </div>
-
-    <!-- CATEGORIES -->
-    <section class="categories" id="categories">
-        <div class="section-titre">
-            <h2>Nos Collections</h2>
-            <p>Des cheveux de qualité pour chaque style</p>
-            <div class="ligne-or"></div>
-        </div>
-        <div class="grille-categories">
-            <div class="categorie-carte">
-                <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=400&q=80" alt="Mèches">
-                <div class="categorie-overlay">
-                    <h3>Mèches</h3>
-                    <p>À partir de 25€</p>
-                </div>
-            </div>
-            <div class="categorie-carte">
-                <img src="https://images.unsplash.com/photo-1595152772835-219674b2a163?w=400&q=80" alt="Tissages">
-                <div class="categorie-overlay">
-                    <h3>Tissages</h3>
-                    <p>À partir de 40€</p>
-                </div>
-            </div>
-            <div class="categorie-carte">
-                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80" alt="Perruques">
-                <div class="categorie-overlay">
-                    <h3>Perruques</h3>
-                    <p>À partir de 80€</p>
-                </div>
-            </div>
-            <div class="categorie-carte">
-                <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&q=80" alt="Extensions">
-                <div class="categorie-overlay">
-                    <h3>Extensions</h3>
-                    <p>À partir de 35€</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUITS -->
-    <section class="produits" id="produits">
-        <div class="section-titre">
-            <h2>Nos Produits Phares</h2>
-            <p>Les favoris de nos clientes</p>
-            <div class="ligne-or"></div>
-        </div>
-        <div class="grille-produits">
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500&q=80" alt="Mèches brésiliennes">
-                    <span class="produit-badge">Bestseller</span>
-                </div>
-                <div class="produit-info">
-                    <h3>Mèches Brésiliennes Lisses</h3>
-                    <p>Cheveux 100% naturels, lisses et brillants. Disponibles en 16", 18", 20", 22" et 24".</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 35€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander les Mèches Brésiliennes Lisses" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a163?w=500&q=80" alt="Tissage ondulé">
-                    <span class="produit-badge">Nouveau</span>
-                </div>
-                <div class="produit-info">
-                    <h3>Tissage Body Wave Premium</h3>
-                    <p>Ondulations naturelles et volumineuses. Texture douce et soyeuse, longue durée.</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 45€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander le Tissage Body Wave Premium" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80" alt="Perruque frontale">
-                    <span class="produit-badge">Top vente</span>
-                </div>
-                <div class="produit-info">
-                    <h3>Perruque Lace Frontal</h3>
-                    <p>Perruque frontale HD ultra-réaliste. Ligne de cheveux naturelle, confort optimal.</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 120€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander la Perruque Lace Frontal" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=500&q=80" alt="Extensions clip">
-                </div>
-                <div class="produit-info">
-                    <h3>Extensions à Clips</h3>
-                    <p>Pose et retrait facile en quelques minutes. Idéales pour ajouter volume et longueur.</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 40€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander les Extensions à Clips" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Mèches bouclées">
-                </div>
-                <div class="produit-info">
-                    <h3>Mèches Bouclées Naturelles</h3>
-                    <p>Boucles définies et rebondissantes. Cheveux naturels, sans traitement chimique.</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 38€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander les Mèches Bouclées Naturelles" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produit-carte">
-                <div class="produit-image">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&q=80" alt="Perruque courte">
-                    <span class="produit-badge">Promo</span>
-                </div>
-                <div class="produit-info">
-                    <h3>Perruque Bob Lisse</h3>
-                    <p>Style bob élégant et moderne. Coupe tendance, facile à entretenir au quotidien.</p>
-                    <div class="produit-bas">
-                        <span class="produit-prix">À partir de 95€</span>
-                        <a href="https://wa.me/33763140181?text=Bonjour, je souhaite commander la Perruque Bob Lisse" target="_blank" class="btn-commander">Commander</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PAIEMENT -->
-    <div class="paiement">
-        <h3>Paiement sécurisé</h3>
-        <p>Plusieurs moyens de paiement acceptés pour votre confort</p>
-        <div class="paiement-icones">
-            <div class="paiement-icone">💳 Carte Bleue</div>
-            <div class="paiement-icone">🅿️ PayPal</div>
-            <div class="paiement-icone">📱 Google Pay</div>
-            <div class="paiement-icone">🏦 Klarna</div>
-            <div class="paiement-icone">💬 WhatsApp</div>
+            <div class="stat-nombre">5★</div>
+            <div class="stat-label">Note moyenne clients</div>
         </div>
     </div>
 
     <!-- TEMOIGNAGES -->
     <section class="temoignages" id="temoignages">
-        <div class="section-titre">
-            <h2>Avis de nos Clientes</h2>
-            <p>Elles nous font confiance</p>
-            <div class="ligne-or"></div>
+        <div class="section-header">
+            <h2>Témoignages</h2>
+            <p>Ce que disent nos clients et partenaires</p>
+            <div class="separateur"></div>
         </div>
-        <div class="grille-temoignages">
-            <div class="temoignage-carte">
-                <div class="etoiles">★★★★★</div>
-                <p>"Les mèches sont d'une qualité exceptionnelle ! Je suis vraiment ravie de mon achat. La livraison était rapide et l'emballage soigné."</p>
-                <div class="temoignage-auteur">— Aminata K., Paris</div>
+        <div class="temo-grille">
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">SALA RH Consulting nous a trouvé des profils excellents en très peu de temps. Leur approche professionnelle et leur réactivité sont remarquables. Je recommande vivement leurs services.</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">DL</div>
+                    <div>
+                        <div class="temo-nom">David Laurent</div>
+                        <div class="temo-poste">DRH — Entreprise de services, Paris</div>
+                    </div>
+                </div>
             </div>
-            <div class="temoignage-carte">
-                <div class="etoiles">★★★★★</div>
-                <p>"Ma perruque lace frontal est magnifique, très naturelle. Je la porte depuis 3 mois et elle est toujours aussi belle. Je recommande vivement !"</p>
-                <div class="temoignage-auteur">— Sandra M., Lyon</div>
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">Grâce à SALA RH Consulting, j'ai trouvé un poste correspondant parfaitement à mon profil. L'accompagnement a été humain et professionnel du début à la fin. Merci !</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">MK</div>
+                    <div>
+                        <div class="temo-nom">Marie Koné</div>
+                        <div class="temo-poste">Candidate placée — Assistante RH</div>
+                    </div>
+                </div>
             </div>
-            <div class="temoignage-carte">
-                <div class="etoiles">★★★★★</div>
-                <p>"Service client au top ! Olga répond très vite sur WhatsApp et donne de bons conseils. Le tissage est parfait, cheveux doux et brillants."</p>
-                <div class="temoignage-auteur">— Fatou D., Marseille</div>
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">Leur expertise en droit du travail nous a été précieuse lors d'une restructuration. Des conseils clairs, pertinents et toujours dans les délais. Un vrai partenaire de confiance.</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">SB</div>
+                    <div>
+                        <div class="temo-nom">Sophie Bernard</div>
+                        <div class="temo-poste">Dirigeante — PME Île-de-France</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-        <div class="contact-texte">
-            <h2>Passez votre<br><em>commande</em></h2>
-            <p>Contactez-nous directement sur WhatsApp, PayPal ou TikTok pour passer votre commande. Nous vous répondons dans les plus brefs délais.</p>
-            <div class="contact-boutons">
-                <a href="https://wa.me/33763140181" target="_blank" class="btn-contact btn-wa">
-                    <span class="btn-contact-icone">📱</span>
-                    WhatsApp — +33 7 63 14 01 81
+        <div class="contact-infos">
+            <h2>Parlons de<br>votre <em>projet</em></h2>
+            <p>Que vous soyez une entreprise à la recherche de talents ou un candidat en quête d'opportunités, nous sommes là pour vous accompagner.</p>
+            <div class="contact-moyens">
+                <a href="tel:0780809353" class="contact-moyen">
+                    <div class="contact-moyen-icone">📞</div>
+                    <div>
+                        <div class="contact-moyen-label">Téléphone</div>
+                        <div class="contact-moyen-texte">07 80 80 93 53</div>
+                    </div>
                 </a>
-                <a href="https://paypal.me/olgabusiness" target="_blank" class="btn-contact btn-pp">
-                    <span class="btn-contact-icone">🅿️</span>
-                    PayPal — paypal.me/olgabusiness
+                <a href="mailto:rh@sala-consulting.fr" class="contact-moyen">
+                    <div class="contact-moyen-icone">✉️</div>
+                    <div>
+                        <div class="contact-moyen-label">Email</div>
+                        <div class="contact-moyen-texte">rh@sala-consulting.fr</div>
+                    </div>
                 </a>
-                <a href="https://tiktok.com/@olgabusiness" target="_blank" class="btn-contact btn-tt">
-                    <span class="btn-contact-icone">🎵</span>
-                    TikTok — @olgabusiness
+                <a href="https://wa.me/33780809353" target="_blank" class="contact-moyen">
+                    <div class="contact-moyen-icone">💬</div>
+                    <div>
+                        <div class="contact-moyen-label">WhatsApp</div>
+                        <div class="contact-moyen-texte">07 80 80 93 53</div>
+                    </div>
                 </a>
+                <div class="contact-moyen">
+                    <div class="contact-moyen-icone">📍</div>
+                    <div>
+                        <div class="contact-moyen-label">Zone d'intervention</div>
+                        <div class="contact-moyen-texte">Paris / Île-de-France</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="contact-form">
-            <h3>Envoyer un message</h3>
-            <div class="form-groupe">
-                <label>Votre prénom</label>
-                <input type="text" placeholder="Ex : Marie">
+            <h3>Demande de rendez-vous</h3>
+            <div class="form-row">
+                <div class="fg"><label>Prénom</label><input type="text" id="c-prenom" placeholder="Votre prénom"></div>
+                <div class="fg"><label>Nom</label><input type="text" id="c-nom" placeholder="Votre nom"></div>
             </div>
-            <div class="form-groupe">
-                <label>Votre email</label>
-                <input type="email" placeholder="marie@email.com">
-            </div>
-            <div class="form-groupe">
-                <label>Produit souhaité</label>
-                <select>
-                    <option>Choisissez un produit</option>
-                    <option>Mèches</option>
-                    <option>Tissage</option>
-                    <option>Perruque</option>
-                    <option>Extensions</option>
+            <div class="fg"><label>Email</label><input type="email" id="c-email" placeholder="votre@email.com"></div>
+            <div class="fg"><label>Téléphone</label><input type="tel" id="c-tel" placeholder="06 00 00 00 00"></div>
+            <div class="fg">
+                <label>Vous êtes</label>
+                <select id="c-type">
+                    <option value="">Sélectionnez</option>
+                    <option>Une entreprise — Je cherche des profils</option>
+                    <option>Un candidat — Je cherche un emploi</option>
+                    <option>Je souhaite un conseil RH</option>
+                    <option>Je souhaite un conseil juridique</option>
                     <option>Autre</option>
                 </select>
             </div>
-            <div class="form-groupe">
-                <label>Votre message</label>
-                <textarea placeholder="Décrivez votre demande..."></textarea>
-            </div>
-            <button class="btn-envoyer" onclick="envoyerWhatsApp()">Envoyer via WhatsApp →</button>
+            <div class="fg"><label>Votre message</label><textarea id="c-message" placeholder="Décrivez votre besoin..."></textarea></div>
+            <button class="btn-envoyer" onclick="envoyerContact()">Envoyer la demande →</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-haut">
-            <div>
-                <div class="footer-logo">Olga <span>Business</span></div>
-                <p class="footer-desc">Votre spécialiste en cheveux premium en France. Mèches, tissages, perruques et extensions de qualité supérieure livrés directement chez vous.</p>
-                <div class="footer-reseaux">
-                    <a href="https://tiktok.com/@olgabusiness" target="_blank" class="footer-reseau">TT</a>
-                    <a href="https://wa.me/33763140181" target="_blank" class="footer-reseau">WA</a>
-                    <a href="https://paypal.me/olgabusiness" target="_blank" class="footer-reseau">PP</a>
+        <div class="footer-grille">
+            <div class="footer-brand">
+                <div class="footer-logo-texte">SALA</div>
+                <div class="footer-logo-sous">RH Consulting</div>
+                <p>Cabinet spécialisé en ressources humaines, recrutement et accompagnement administratif. Votre partenaire de confiance en Île-de-France.</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/33780809353" target="_blank">WA</a>
+                    <a href="mailto:rh@sala-consulting.fr">✉</a>
+                    <a href="tel:0780809353">📞</a>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Boutique</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="#categories">Mèches</a></li>
-                    <li><a href="#categories">Tissages</a></li>
-                    <li><a href="#categories">Perruques</a></li>
-                    <li><a href="#categories">Extensions</a></li>
+                    <li><a href="#services">Accompagnement administratif</a></li>
+                    <li><a href="#services">Emploi & insertion</a></li>
+                    <li><a href="#services">Services RH</a></li>
+                    <li><a href="#services">Droit du travail</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Informations</h4>
+                <h4>Cabinet</h4>
                 <ul>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Livraison</a></li>
-                    <li><a href="#">Retours</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#processus">Notre méthode</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0780809353">07 80 80 93 53</a></li>
+                    <li><a href="mailto:rh@sala-consulting.fr">rh@sala-consulting.fr</a></li>
+                    <li><a href="https://wa.me/33780809353" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Prendre RDV</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bas">
-            <p>© 2026 <span>Olga Business</span> — Tous droits réservés</p>
-            <p>Fait avec ❤️ en <span>France</span></p>
+            <p>© 2026 <span>SALA RH Consulting</span> — Tous droits réservés</p>
+            <p>Paris / <span>Île-de-France</span></p>
         </div>
     </footer>
 
     <script>
-        function envoyerWhatsApp() {
-            const prenom = document.querySelector('input[type="text"]').value;
-            const produit = document.querySelector('select').value;
-            const message = document.querySelector('textarea').value;
-            if (!prenom) { alert('Veuillez entrer votre prénom.'); return; }
-            const texte = `Bonjour Olga, je m'appelle ${prenom}. Je suis intéressée par : ${produit}. ${message}`;
-            window.open(`https://wa.me/33763140181?text=${encodeURIComponent(texte)}`, '_blank');
+        function envoyerContact() {
+            const prenom = document.getElementById('c-prenom').value;
+            const nom = document.getElementById('c-nom').value;
+            const type = document.getElementById('c-type').value;
+            const message = document.getElementById('c-message').value;
+            if (!prenom || !nom) { alert('Veuillez entrer votre nom et prénom.'); return; }
+            const texte = `Bonjour SALA RH Consulting,\n\nJe m'appelle ${prenom} ${nom}.\n\nProfil : ${type || 'à préciser'}\n\n${message}`;
+            window.open(`https://wa.me/33780809353?text=${encodeURIComponent(texte)}`, '_blank');
         }
 
-        // Animation au scroll
-        const observateur = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.produit-carte, .temoignage-carte, .categorie-carte').forEach(el => {
+        document.querySelectorAll('.service-carte, .temo-carte, .etape, .stat').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observateur.observe(el);
+            el.style.transform = 'translateY(25px)';
+            el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+            obs.observe(el);
         });
     </script>
 
