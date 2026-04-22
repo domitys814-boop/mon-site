@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALA RH Consulting — Votre partenaire de confiance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bordeaux: #7a1a2e;
+            --bordeaux-fonce: #4a0e1a;
+            --bordeaux-clair: #9b2a3e;
+            --or: #c49a6c;
+            --or-clair: #e8c9a0;
+            --creme: #fdf6f0;
+            --creme-fonce: #f5e8dc;
+            --blanc: #ffffff;
+            --noir: #1a1010;
+            --gris: #7a6a6a;
+            --gris-clair: #f8f4f2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--blanc);
+            color: var(--noir);
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            background: var(--bordeaux-fonce);
+            color: var(--or-clair);
+            padding: 9px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .top-bar a {
+            color: var(--or-clair);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .top-bar a:hover { color: white; }
+
+        .top-bar-gauche { display: flex; gap: 30px; align-items: center; }
+        .top-bar-droite { display: flex; gap: 20px; align-items: center; }
+
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: var(--blanc);
+            border-bottom: 1px solid #ede0d8;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            box-shadow: 0 2px 20px rgba(122,26,46,0.06);
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-nav img {
+            height: 55px;
+            width: 55px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-texte {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-nom {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--bordeaux);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo-sous {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--or);
+            margin-top: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--noir);
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bordeaux);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover { color: var(--bordeaux); }
+        .nav-menu a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--bordeaux);
+            color: var(--blanc);
+            padding: 12px 28px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover { background: var(--bordeaux-clair); }
+
+        /* HERO */
+        .hero {
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--creme);
+        }
+
+        .hero-gauche {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 70px 80px 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--creme-fonce);
+            color: var(--bordeaux);
+            padding: 8px 18px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--bordeaux);
+            width: fit-content;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--or);
+        }
+
+        .hero-slogan {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--or);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            color: var(--gris);
+            line-height: 1.9;
+            margin-bottom: 40px;
+            max-width: 440px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .cta-bordeaux {
+            background: var(--bordeaux);
+            color: var(--blanc);
+            padding: 16px 38px;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .cta-bordeaux:hover { background: var(--bordeaux-clair); }
+
+        .cta-outline {
+            border: 1px solid var(--bordeaux);
+            color: var(--bordeaux);
+            padding: 16px 38px;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-outline:hover { background: var(--bordeaux); color: var(--blanc); }
+
+        .hero-valeurs {
+            display: flex;
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e0d0c8;
+        }
+
+        .valeur {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: var(--gris);
+            text-transform: uppercase;
+        }
+
+        .valeur-icone {
+            width: 28px;
+            height: 28px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .hero-droite {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-droite img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-droite-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            background: rgba(74, 14, 26, 0.88);
+            padding: 25px 28px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-droite-overlay p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 5px;
+        }
+
+        .hero-droite-overlay strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 300;
+            color: white;
+            display: block;
+        }
+
+        /* BANDE */
+        .bande {
+            background: var(--bordeaux);
+            padding: 16px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .bande-item {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            white-space: nowrap;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 80px;
+            background: var(--blanc);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 13px;
+            color: var(--gris);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .separateur {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--bordeaux), var(--or));
+            margin: 18px auto 0;
+        }
+
+        .services-grille {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .service-carte {
+            background: var(--gris-clair);
+            padding: 40px 28px;
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .service-carte:hover {
+            background: var(--blanc);
+            border-bottom-color: var(--bordeaux);
+            box-shadow: 0 10px 40px rgba(122,26,46,0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-icone {
+            width: 70px;
+            height: 70px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 22px;
+            transition: background 0.3s;
+        }
+
+        .service-carte:hover .service-icone { background: var(--or); }
+
+        .service-carte h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 12px;
+        }
+
+        .service-carte p {
+            font-size: 13px;
+            color: var(--gris);
+            line-height: 1.8;
+        }
+
+        /* APROPOS */
+        .apropos {
+            padding: 100px 80px;
+            background: var(--creme);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .apropos-image {
+            position: relative;
+        }
+
+        .apropos-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .apropos-image-badge {
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            background: var(--bordeaux);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apropos-image-badge strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            display: block;
+            line-height: 1;
+        }
+
+        .apropos-image-badge span {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-top: 5px;
+        }
+
+        .apropos-texte h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .apropos-texte h2 em {
+            font-style: italic;
+            color: var(--or);
+        }
+
+        .apropos-texte p {
+            font-size: 15px;
+            color: var(--gris);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .apropos-liste {
+            list-style: none;
+            margin: 25px 0 35px;
+        }
+
+        .apropos-liste li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e8d8d0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--noir);
+        }
+
+        .apropos-liste li::before {
+            content: '✓';
+            width: 22px;
+            height: 22px;
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+
+        /* PROCESSUS */
+        .processus {
+            padding: 100px 80px;
+            background: var(--bordeaux-fonce);
+        }
+
+        .processus .section-header h2 { color: white; }
+        .processus .section-header p { color: var(--or-clair); }
+        .processus .separateur { background: linear-gradient(90deg, var(--or), var(--or-clair)); }
+
+        .processus-grille {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .processus-grille::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--or), transparent);
+            z-index: 0;
+        }
+
+        .etape {
+            text-align: center;
+            padding: 20px 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .etape-numero {
+            width: 90px;
+            height: 90px;
+            background: var(--bordeaux-clair);
+            border: 2px solid var(--or);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: background 0.3s;
+        }
+
+        .etape:hover .etape-numero { background: var(--or); }
+
+        .etape-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--or-clair);
+            line-height: 1;
+        }
+
+        .etape-icone { font-size: 20px; }
+
+        .etape h3 {
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .etape p {
+            font-size: 12px;
+            color: #c0a0a8;
+            line-height: 1.7;
+        }
+
+        /* STATS */
+        .stats {
+            background: var(--creme-fonce);
+            padding: 70px 80px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px 20px;
+            border-right: 1px solid #e0c8b8;
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat-nombre {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: var(--bordeaux);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-top: 10px;
+        }
+
+        /* TEMOIGNAGES */
+        .temoignages {
+            padding: 100px 80px;
+            background: var(--blanc);
+        }
+
+        .temo-grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .temo-carte {
+            background: var(--gris-clair);
+            padding: 35px 30px;
+            border-top: 3px solid var(--bordeaux);
+            transition: transform 0.3s;
+        }
+
+        .temo-carte:hover { transform: translateY(-5px); }
+
+        .temo-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            color: var(--bordeaux);
+            line-height: 0.5;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .temo-texte {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.85;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .temo-auteur {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .temo-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--bordeaux);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .temo-nom {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--bordeaux-fonce);
+        }
+
+        .temo-poste {
+            font-size: 11px;
+            color: var(--gris);
+            margin-top: 2px;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 100px 80px;
+            background: var(--creme);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-infos h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .contact-infos h2 em { font-style: italic; color: var(--or); }
+
+        .contact-infos p {
+            font-size: 15px;
+            color: var(--gris);
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+
+        .contact-moyens {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-moyen {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            background: var(--blanc);
+            border-left: 3px solid var(--bordeaux);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-moyen:hover {
+            background: var(--bordeaux);
+            border-left-color: var(--or);
+        }
+
+        .contact-moyen:hover .contact-moyen-texte,
+        .contact-moyen:hover .contact-moyen-label { color: white; }
+
+        .contact-moyen-icone {
+            width: 42px;
+            height: 42px;
+            background: var(--creme-fonce);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-moyen:hover .contact-moyen-icone { background: rgba(255,255,255,0.2); }
+
+        .contact-moyen-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .contact-moyen-texte {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--noir);
+            transition: color 0.3s;
+        }
+
+        /* FORMULAIRE */
+        .contact-form {
+            background: var(--blanc);
+            padding: 45px;
+            box-shadow: 0 5px 30px rgba(122,26,46,0.08);
+        }
+
+        .contact-form h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--bordeaux-fonce);
+            margin-bottom: 28px;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .fg { margin-bottom: 18px; }
+
+        .fg label {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gris);
+            margin-bottom: 7px;
+        }
+
+        .fg input, .fg select, .fg textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: var(--gris-clair);
+            border: 1px solid #e8d8d0;
+            font-family: 'Jost', sans-serif;
+            font-size: 14px;
+            color: var(--noir);
+            transition: border 0.2s;
+        }
+
+        .fg input:focus, .fg select:focus, .fg textarea:focus {
+            outline: none;
+            border-color: var(--bordeaux);
+            background: var(--blanc);
+        }
+
+        .fg textarea { height: 100px; resize: vertical; }
+
+        .btn-envoyer {
+            width: 100%;
+            padding: 16px;
+            background: var(--bordeaux);
+            color: var(--blanc);
+            border: none;
+            font-family: 'Jost', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 5px;
+        }
+
+        .btn-envoyer:hover { background: var(--bordeaux-clair); }
+
+        /* FOOTER */
+        footer {
+            background: var(--bordeaux-fonce);
+            padding: 70px 80px 30px;
+        }
+
+        .footer-grille {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-logo-texte { color: white; font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; }
+        .footer-logo-sous { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--or-clair); margin-bottom: 18px; }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-social { display: flex; gap: 10px; }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.08);
+            color: var(--or-clair);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-decoration: none;
+            transition: background 0.2s;
+            border-radius: 2px;
+        }
+
+        .footer-social a:hover { background: var(--bordeaux-clair); }
+
+        .footer-col h4 {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 22px;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover { color: var(--or-clair); }
+
+        .footer-bas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-bas span { color: var(--or); }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .top-bar { padding: 9px 20px; font-size: 11px; }
+            nav { padding: 0 20px; }
+            .nav-menu { display: none; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-gauche { padding: 50px 25px; }
+            .hero h1 { font-size: 38px; }
+            .hero-droite { height: 400px; }
+            .services, .apropos, .processus, .temoignages, .contact { padding: 60px 20px; }
+            .services-grille { grid-template-columns: 1fr 1fr; }
+            .apropos { grid-template-columns: 1fr; }
+            .apropos-image-badge { right: 10px; bottom: -20px; }
+            .processus-grille { grid-template-columns: 1fr 1fr; }
+            .stats { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
+            .temo-grille { grid-template-columns: 1fr; }
+            .contact { grid-template-columns: 1fr; }
+            .footer-grille { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .footer-bas { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-gauche">
+            <a href="tel:0780809353">📞 07 80 80 93 53</a>
+            <a href="mailto:rh@sala-consulting.fr">✉ rh@sala-consulting.fr</a>
+        </div>
+        <div class="top-bar-droite">
+            <span>Paris / Île-de-France</span>
+            <a href="https://wa.me/33780809353" target="_blank">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="logo-nav">
+            <img src="unnamed.jpg" alt="SALA RH Consulting Logo">
+            <div class="logo-texte">
+                <span class="logo-nom">SALA</span>
+                <span class="logo-sous">RH Consulting</span>
+            </div>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#processus">Notre méthode</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-gauche">
+            <div class="hero-badge">✦ Votre partenaire de confiance</div>
+            <h1>Expertise RH<br>& <em>Recrutement</em><br>sur mesure</h1>
+            <p class="hero-slogan">"Votre partenaire de confiance"</p>
+            <p class="hero-desc">Accompagnement administratif, recrutement d'agents qualifiés et conseil en droit du travail. Nous plaçons les bons profils dans les bonnes entreprises en Île-de-France.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="cta-bordeaux">Prendre rendez-vous</a>
+                <a href="#services" class="cta-outline">Nos services</a>
+            </div>
+            <div class="hero-valeurs">
+                <div class="valeur"><div class="valeur-icone">🛡</div>Professionnalisme</div>
+                <div class="valeur"><div class="valeur-icone">♡</div>Écoute</div>
+                <div class="valeur"><div class="valeur-icone">🎯</div>Résultats</div>
+                <div class="valeur"><div class="valeur-icone">🔒</div>Confidentialité</div>
+            </div>
+        </div>
+        <div class="hero-droite">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=85" alt="SALA RH Consulting">
+            <div class="hero-droite-overlay">
+                <p>Cabinet spécialisé</p>
+                <strong>Recrutement & Conseil RH — Paris</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANDE -->
+    <div class="bande">
+        <span class="bande-item">✦ Accompagnement administratif</span>
+        <span class="bande-item">✦ Emploi & insertion professionnelle</span>
+        <span class="bande-item">✦ Services RH</span>
+        <span class="bande-item">✦ Conseil en droit du travail</span>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Nos Services</h2>
+            <p>Un accompagnement complet pour votre réussite</p>
+            <div class="separateur"></div>
+        </div>
+        <div class="services-grille">
+            <div class="service-carte">
+                <div class="service-icone">📋</div>
+                <h3>Accompagnement Administratif</h3>
+                <p>Gestion de vos dossiers administratifs, suivi des procédures et mise en conformité. Nous vous accompagnons à chaque étape.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">💼</div>
+                <h3>Emploi & Insertion Professionnelle</h3>
+                <p>Placement d'agents qualifiés en entreprise, accompagnement à l'insertion et suivi personnalisé des candidats.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">👥</div>
+                <h3>Services RH</h3>
+                <p>Gestion des ressources humaines, recrutement sur mesure, formation et développement des compétences de vos équipes.</p>
+            </div>
+            <div class="service-carte">
+                <div class="service-icone">⚖️</div>
+                <h3>Conseil en Droit du Travail</h3>
+                <p>Expertise juridique en droit social, rédaction de contrats, gestion des conflits et mise en conformité légale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="apropos" id="apropos">
+        <div class="apropos-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85" alt="SALA RH Consulting équipe">
+            <div class="apropos-image-badge">
+                <strong>100%</strong>
+                <span>Dédié à votre succès</span>
+            </div>
+        </div>
+        <div class="apropos-texte">
+            <h2>Un cabinet RH<br>à votre <em>service</em></h2>
+            <p>SALA RH Consulting est un cabinet spécialisé en ressources humaines et accompagnement administratif, basé à Paris en Île-de-France.</p>
+            <p>Notre mission est de créer des ponts entre les entreprises et les talents, tout en garantissant un accompagnement humain, professionnel et confidentiel à chacun de nos clients.</p>
+            <ul class="apropos-liste">
+                <li>Recrutement d'agents qualifiés pour les entreprises</li>
+                <li>Accompagnement personnalisé des candidats</li>
+                <li>Conseil juridique en droit du travail</li>
+                <li>Gestion administrative complète</li>
+                <li>Suivi post-placement et fidélisation</li>
+            </ul>
+            <a href="#contact" class="cta-bordeaux">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- PROCESSUS -->
+    <section class="processus" id="processus">
+        <div class="section-header">
+            <h2>Notre Méthode</h2>
+            <p>Un processus structuré pour des résultats concrets</p>
+            <div class="separateur"></div>
+        </div>
+        <div class="processus-grille">
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">01</div>
+                    <div class="etape-icone">📞</div>
+                </div>
+                <h3>Premier contact</h3>
+                <p>Échange initial pour comprendre vos besoins et objectifs spécifiques.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">02</div>
+                    <div class="etape-icone">🔍</div>
+                </div>
+                <h3>Analyse & audit</h3>
+                <p>Étude approfondie de votre situation et de vos besoins en recrutement.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">03</div>
+                    <div class="etape-icone">🎯</div>
+                </div>
+                <h3>Sélection</h3>
+                <p>Identification et sélection rigoureuse des meilleurs profils pour votre entreprise.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">04</div>
+                    <div class="etape-icone">🤝</div>
+                </div>
+                <h3>Placement</h3>
+                <p>Mise en relation et intégration des candidats au sein de votre équipe.</p>
+            </div>
+            <div class="etape">
+                <div class="etape-numero">
+                    <div class="etape-num">05</div>
+                    <div class="etape-icone">📈</div>
+                </div>
+                <h3>Suivi</h3>
+                <p>Accompagnement continu et suivi post-placement pour garantir la réussite.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-nombre">200+</div>
+            <div class="stat-label">Placements réussis</div>
+        </div>
+        <div class="stat">
+            <div class="stat-nombre">50+</div>
+            <div class="stat-label">Entreprises partenaires</div>
+        </div>
+        <div class="stat">
+            <div class="stat-nombre">98%</div>
+            <div class="stat-label">Taux de satisfaction</div>
+        </div>
+        <div class="stat">
+            <div class="stat-nombre">5★</div>
+            <div class="stat-label">Note moyenne clients</div>
+        </div>
+    </div>
+
+    <!-- TEMOIGNAGES -->
+    <section class="temoignages" id="temoignages">
+        <div class="section-header">
+            <h2>Témoignages</h2>
+            <p>Ce que disent nos clients et partenaires</p>
+            <div class="separateur"></div>
+        </div>
+        <div class="temo-grille">
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">SALA RH Consulting nous a trouvé des profils excellents en très peu de temps. Leur approche professionnelle et leur réactivité sont remarquables. Je recommande vivement leurs services.</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">DL</div>
+                    <div>
+                        <div class="temo-nom">David Laurent</div>
+                        <div class="temo-poste">DRH — Entreprise de services, Paris</div>
+                    </div>
+                </div>
+            </div>
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">Grâce à SALA RH Consulting, j'ai trouvé un poste correspondant parfaitement à mon profil. L'accompagnement a été humain et professionnel du début à la fin. Merci !</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">MK</div>
+                    <div>
+                        <div class="temo-nom">Marie Koné</div>
+                        <div class="temo-poste">Candidate placée — Assistante RH</div>
+                    </div>
+                </div>
+            </div>
+            <div class="temo-carte">
+                <div class="temo-quote">"</div>
+                <p class="temo-texte">Leur expertise en droit du travail nous a été précieuse lors d'une restructuration. Des conseils clairs, pertinents et toujours dans les délais. Un vrai partenaire de confiance.</p>
+                <div class="temo-auteur">
+                    <div class="temo-avatar">SB</div>
+                    <div>
+                        <div class="temo-nom">Sophie Bernard</div>
+                        <div class="temo-poste">Dirigeante — PME Île-de-France</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-infos">
+            <h2>Parlons de<br>votre <em>projet</em></h2>
+            <p>Que vous soyez une entreprise à la recherche de talents ou un candidat en quête d'opportunités, nous sommes là pour vous accompagner.</p>
+            <div class="contact-moyens">
+                <a href="tel:0780809353" class="contact-moyen">
+                    <div class="contact-moyen-icone">📞</div>
+                    <div>
+                        <div class="contact-moyen-label">Téléphone</div>
+                        <div class="contact-moyen-texte">07 80 80 93 53</div>
+                    </div>
+                </a>
+                <a href="mailto:rh@sala-consulting.fr" class="contact-moyen">
+                    <div class="contact-moyen-icone">✉️</div>
+                    <div>
+                        <div class="contact-moyen-label">Email</div>
+                        <div class="contact-moyen-texte">rh@sala-consulting.fr</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/33780809353" target="_blank" class="contact-moyen">
+                    <div class="contact-moyen-icone">💬</div>
+                    <div>
+                        <div class="contact-moyen-label">WhatsApp</div>
+                        <div class="contact-moyen-texte">07 80 80 93 53</div>
+                    </div>
+                </a>
+                <div class="contact-moyen">
+                    <div class="contact-moyen-icone">📍</div>
+                    <div>
+                        <div class="contact-moyen-label">Zone d'intervention</div>
+                        <div class="contact-moyen-texte">Paris / Île-de-France</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Demande de rendez-vous</h3>
+            <div class="form-row">
+                <div class="fg"><label>Prénom</label><input type="text" id="c-prenom" placeholder="Votre prénom"></div>
+                <div class="fg"><label>Nom</label><input type="text" id="c-nom" placeholder="Votre nom"></div>
+            </div>
+            <div class="fg"><label>Email</label><input type="email" id="c-email" placeholder="votre@email.com"></div>
+            <div class="fg"><label>Téléphone</label><input type="tel" id="c-tel" placeholder="06 00 00 00 00"></div>
+            <div class="fg">
+                <label>Vous êtes</label>
+                <select id="c-type">
+                    <option value="">Sélectionnez</option>
+                    <option>Une entreprise — Je cherche des profils</option>
+                    <option>Un candidat — Je cherche un emploi</option>
+                    <option>Je souhaite un conseil RH</option>
+                    <option>Je souhaite un conseil juridique</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <div class="fg"><label>Votre message</label><textarea id="c-message" placeholder="Décrivez votre besoin..."></textarea></div>
+            <button class="btn-envoyer" onclick="envoyerContact()">Envoyer la demande →</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grille">
+            <div class="footer-brand">
+                <div class="footer-logo-texte">SALA</div>
+                <div class="footer-logo-sous">RH Consulting</div>
+                <p>Cabinet spécialisé en ressources humaines, recrutement et accompagnement administratif. Votre partenaire de confiance en Île-de-France.</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/33780809353" target="_blank">WA</a>
+                    <a href="mailto:rh@sala-consulting.fr">✉</a>
+                    <a href="tel:0780809353">📞</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Accompagnement administratif</a></li>
+                    <li><a href="#services">Emploi & insertion</a></li>
+                    <li><a href="#services">Services RH</a></li>
+                    <li><a href="#services">Droit du travail</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Cabinet</h4>
+                <ul>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#processus">Notre méthode</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0780809353">07 80 80 93 53</a></li>
+                    <li><a href="mailto:rh@sala-consulting.fr">rh@sala-consulting.fr</a></li>
+                    <li><a href="https://wa.me/33780809353" target="_blank">WhatsApp</a></li>
+                    <li><a href="#contact">Prendre RDV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <p>© 2026 <span>SALA RH Consulting</span> — Tous droits réservés</p>
+            <p>Paris / <span>Île-de-France</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function envoyerContact() {
+            const prenom = document.getElementById('c-prenom').value;
+            const nom = document.getElementById('c-nom').value;
+            const type = document.getElementById('c-type').value;
+            const message = document.getElementById('c-message').value;
+            if (!prenom || !nom) { alert('Veuillez entrer votre nom et prénom.'); return; }
+            const texte = `Bonjour SALA RH Consulting,\n\nJe m'appelle ${prenom} ${nom}.\n\nProfil : ${type || 'à préciser'}\n\n${message}`;
+            window.open(`https://wa.me/33780809353?text=${encodeURIComponent(texte)}`, '_blank');
+        }
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-carte, .temo-carte, .etape, .stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(25px)';
+            el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+            obs.observe(el);
+        });
+    </script>
+
+</body>
+</html>
